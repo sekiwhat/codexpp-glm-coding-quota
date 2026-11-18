@@ -1,0 +1,31 @@
+{
+  "id": "glm-coding-quota",
+  "name": "GLM Coding Plan 余额",
+  "version": "0.1.0",
+  "description": "在输入框下方显示 GLM Coding Plan 的 5 小时与每周剩余额度。默认自动读取 Codex++ 网关里配置的 GLM Key。",
+  "engines": {
+    "codexpp": ">=2.6.0 <3"
+  },
+  "renderer": [
+    "renderer.js"
+  ],
+  "backend": {
+    "script": "backend/main.mjs"
+  },
+  "config": {
+    "apiKey": {
+      "type": "string",
+      "title": "GLM Coding Plan API Key",
+      "description": "留空时自动读取 Codex++ 网关里 open.bigmodel.cn 供应商的 Key",
+      "secret": true
+    },
+    "refreshMinutes": {
+      "type": "number",
+      "title": "刷新间隔（分钟）",
+      "min": 1,
+      "max": 1440,
+      "default": 5
+    }
+  },
+  "repository": "sekiwhat/codexpp-glm-coding-quota"
+}
