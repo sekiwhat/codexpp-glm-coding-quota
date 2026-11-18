@@ -49,13 +49,7 @@
 
     const text = document.createElement("span");
     text.className = "glmq-text";
-    text.textContent = `${label} ${formatNumber(info.remaining)}`;
-    if (total) {
-      const totalNode = document.createElement("span");
-      totalNode.className = "glmq-total";
-      totalNode.textContent = `/${formatNumber(total)}`;
-      text.appendChild(totalNode);
-    }
+    text.textContent = `${label} ${formatPercent(usedPercent)}`;
     const bar = document.createElement("span");
     bar.className = "glmq-bar";
     bar.setAttribute("aria-hidden", "true");
